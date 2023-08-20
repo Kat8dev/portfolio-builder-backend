@@ -8,7 +8,7 @@ import cartRoutes from './routes/cart.js';
 import stripeRoute from './routes/stripe.js';
 import connectDB from './config/dbConnect.js';
 import cors from 'cors';
-
+// portfolio-builder?retryWrites=true&w=majority
 dotenv.config();
 connectDB();
 const app = express();
