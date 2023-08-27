@@ -6,15 +6,15 @@ const router = Router();
 
 router
   .route('/projects')
-  .post(verification.verifyTokenAndAdmin, projectsControllers.createProject);
+  .post(verification.verifyToken, projectsControllers.createProject);
 
 router
   .route('/projects/:id')
-  .put(verification.verifyTokenAndAdmin, projectsControllers.updateProject);
+  .put(verification.verifyToken, projectsControllers.updateProject);
 
 router
   .route('/projects/:id')
-  .delete(verification.verifyTokenAndAdmin, projectsControllers.deleteProject);
+  .delete(verification.verifyToken, projectsControllers.deleteProject);
 
 router.route('/projects/:id').get(projectsControllers.getProject);
 
