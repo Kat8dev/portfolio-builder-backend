@@ -2,13 +2,11 @@ import Project from '../models/project.js';
 
 const createProject = async (req, res) => {
   const project = new Project(req.body);
-  console.log(req.userId)
-  
   try {
     const savedProject = await project.save();
     res.status(200).json(savedProject);
   } catch (err) {
-    res.status(500).json(err);
+    res.status(500).json(err, req.userId);
   }
 };
 
