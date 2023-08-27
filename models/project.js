@@ -5,7 +5,7 @@ const ProjectSchema = new Schema(
     title: {
       type: String,
       required: true,
-      unique: true,
+      /* unique: true, */
     },
     desc: {
       type: String,
@@ -13,11 +13,11 @@ const ProjectSchema = new Schema(
     },
     img: {
       type: String,
-      required: true,
+      /* required: true, */
     },
     link: {
       type: Boolean,
-      default: true,
+      /* default: true, */
     },
     userId: {
         type: String,
