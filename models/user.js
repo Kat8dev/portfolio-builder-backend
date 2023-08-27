@@ -29,9 +29,9 @@ const UserSchema = new Schema(
       type: Boolean,
       default: false,
     },
-    portfolio: {
-      id: String,
-      url: String,
+    portfolioId: {
+      type: String,
+      unique: true,
     }
   },
   {
