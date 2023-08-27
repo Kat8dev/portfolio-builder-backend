@@ -1,12 +1,14 @@
 import Project from '../models/project.js';
 
 const createProject = async (req, res) => {
-  const project = new Project(req.body);
+  const { title, link, desc } = req.body;
+  const userId = req.user.id;
+  const project = new Project({ title, link, desc, userId });
   try {
     const savedProject = await project.save();
     res.status(200).json(savedProject);
   } catch (err) {
-    res.status(500).json(err, req.userId);
+    res.status(500).json(err);
   }
 };
 
@@ -44,15 +46,15 @@ const getProject = async (req, res) => {
 };
 
 const getAllProjects = async (req, res) => {
-    try {
-      const userId = req.params.userId;
-      const projects = await Project.find({ userId: { $in: [userId] } });
-      res.status(200).json(projects);
-    } catch (err) {
-      res.status(500).json(err);
-    }
+  try {
+    const userId = req.params.userId;
+    const projects = await Project.find({ userId: { $in: [userId] } });
+    res.status(200).json(projects);
+  } catch (err) {
+    res.status(500).json(err);
+  }
 };
-  
+
 export default {
   createProject,
   updateProject,

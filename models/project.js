@@ -16,8 +16,7 @@ const ProjectSchema = new Schema(
       /* required: true, */
     },
     link: {
-      type: Boolean,
-      /* default: true, */
+      type: String,
     },
     userId: {
         type: String,
@@ -29,6 +28,6 @@ const ProjectSchema = new Schema(
   }
 );
 
-const Project = model('Product', ProjectSchema);
+const Project = model('Project', ProjectSchema);
 
 export default Project;

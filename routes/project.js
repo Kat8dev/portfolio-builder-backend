@@ -6,7 +6,7 @@ const router = Router();
 
 router
   .route('/projects')
-  .post(/* verification.verifyToken,  */projectsControllers.createProject);
+  .post(verification.verifyToken, projectsControllers.createProject);
 
 router
   .route('/projects/:id')
